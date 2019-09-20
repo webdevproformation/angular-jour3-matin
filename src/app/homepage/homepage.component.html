@@ -1,0 +1,10 @@
+<div>
+    <article *ngFor="let article of articles">
+        <figure>
+            <img [src]="article.urlImg" alt="">
+        </figure>
+        <h2>{{ article.titre }} {{ article.id }}</h2>
+        <p>{{ article.contenu }}</p>
+    </article>
+</div>
+
