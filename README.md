@@ -28,71 +28,71 @@ dans app.module.ts
 </pre>
 	dans la section import de @NgModule
 <pre>
-	 RouterModule.forRoot([
-     		 {path: "", component : HomepageComponent},
-     		 {path: "contact", component : ContactpageComponent},
-   	 ])
+    RouterModule.forRoot([
+            {path: "", component : HomepageComponent},
+            {path: "contact", component : ContactpageComponent},
+    ])
 </pre>
 3 je vais les disposer dans app.component.html (le plus important)
 		tout se passe dans ce fichier 
-<xmp>
-<div class="container">
-  <header class="row">
-    <div class="col-md-8 col-md-push-2">
-      <!-- quelquesoit l'url de la page il ya aura toujours visible la nav bar -->
-      <app-navbar></app-navbar>
-    </div>
-  </header>
-  <section class="row">
-    <div class="col-md-8 col-md-push-2">
-      <!-- en fonction de l'url 
+<pre>
+&lt;div class="container">
+  &lt;header class="row">
+    &lt;div class="col-md-8 col-md-push-2">
+      &lt;!-- quelquesoit l'url de la page il ya aura toujours visible la nav bar -->
+      &lt;app-navbar>&lt;/app-navbar>
+    &lt;/div>
+  &lt;/header>
+  &lt;section class="row">
+    &lt;div class="col-md-8 col-md-push-2">
+      &lt;!-- en fonction de l'url 
         si l'url / composant HomepageComponent
         si l'url /contact composant ContactpageComponent
       -->
-      <router-outlet></router-outlet>
-    </div>
-  </section>
-</div>
-</xmp>
+      &lt;router-outlet>&lt;/router-outlet>
+    &lt;/div>
+  &lt;/section>
+&lt;/div>
+</pre>
 4 je vais coder chaque module (html + bootstrap)
 
 barre de nav => 
 - https://www.w3schools.com/Bootstrap/bootstrap_navbar.asp
-<xmp>
-<nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="#">jour3 matin</a>
-      </div>
-      <ul class="nav navbar-nav">
-        <li class="active"><a routerLink="/">Accueil</a></li>
-        <li><a routerLink="/contact">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
-</xmp>
+<pre>
+&lt;nav class="navbar navbar-default">
+    &lt;div class="container-fluid">
+      &lt;div class="navbar-header">
+        &lt;a class="navbar-brand" href="#">jour3 matin&lt;/a>
+      &lt;/div>
+      &lt;ul class="nav navbar-nav">
+        &lt;li class="active">&lt;a routerLink="/">Accueil&lt;/a>&lt;/li>
+        &lt;li>&lt;a routerLink="/contact">Contact&lt;/a>&lt;/li>
+      &lt;/ul>
+    &lt;/div>
+  &lt;/nav>
+</pre>
 page contact
 - https://www.w3schools.com/Bootstrap/bootstrap_forms_inputs.asp
 - https://www.w3schools.com/Bootstrap/bootstrap_alerts.asp
-<xmp>
-<form>
-    <div class="form-group">
-        <label for="email">email:</label>
-        <input type="text" class="form-control" id="email" #email name="email">
-      </div>
-    <div class="form-group">
-        <label for="comment">Comment:</label>
-        <textarea class="form-control" rows="5" id="comment" #comment name="comment"></textarea>
-    </div> 
-    <div class="form-group">
-        <input type="submit" class="btn btn-primary" value="Envoyer" 
+<pre>
+&lt;form>
+    &lt;div class="form-group">
+        &lt;label for="email">email:&lt;/label>
+        &lt;input type="text" class="form-control" id="email" #email name="email">
+      &lt;/div>
+    &lt;div class="form-group">
+        &lt;label for="comment">Comment:&lt;/label>
+        &lt;textarea class="form-control" rows="5" id="comment" #comment name="comment">&lt;/textarea>
+    &lt;/div> 
+    &lt;div class="form-group">
+        &lt;input type="submit" class="btn btn-primary" value="Envoyer" 
             (click)=onSubmitContact($event,email,comment)>
-    </div>
-</form>
-<div class="alert alert-success" *ngIf="isCorrect">
-    <strong>Success!</strong> Indicates a successful or positive action.
-</div>
-</xmp>
+    &lt;/div>
+&lt;/form>
+&lt;div class="alert alert-success" *ngIf="isCorrect">
+    &lt;strong>Success!&lt;/strong> Indicates a successful or positive action.
+&lt;/div>
+</pre>
 <pre>
 import { Component, OnInit } from '@angular/core';
 
@@ -124,18 +124,18 @@ export class ContactpageComponent implements OnInit {
 }
 </pre>
 page d'accueil
-<xmp>
+<pre>
 
-<div>
-    <article *ngFor="let article of articles">
-        <figure>
-            <img [src]="article.urlImg" alt="">
-        </figure>
-        <h2>{{ article.titre }} {{ article.id }}</h2>
-        <p>{{ article.contenu }}</p>
-    </article>
-</div>
-</xmp>
+&lt;div>
+    &lt;article *ngFor="let article of articles">
+        &lt;figure>
+            &lt;img [src]="article.urlImg" alt="">
+        &lt;/figure>
+        &lt;h2>{{ article.titre }} {{ article.id }}&lt;/h2>
+        &lt;p>{{ article.contenu }}&lt;/p>
+    &lt;/article>
+&lt;/div>
+</pre>
 
 
 
