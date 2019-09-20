@@ -15,14 +15,14 @@ voir => http://formation.webdevpro.net/angular/02-data-event.html section 3
 
 1ère chose à faire 
 
-1 créer tous les composants
+1. créer tous les composants
 	shell dans lequel j'ai fais ng serve -o (touche pas)
 	ouvrir un deuxieme shell
 - ng g c navbar
 - ng g c homepage
 - ng g c contactpage
 
-2 ajouter le RouterModule + définir les routes de mon application
+2. ajouter le RouterModule + définir les routes de mon application
 dans `app.module.ts`
 <pre>
 import { RouterModule } from "@angular/router";
@@ -34,7 +34,7 @@ RouterModule.forRoot([
         {path: "contact", component : ContactpageComponent},
 ])
 </pre>
-3 je vais les disposer dans `app.component.html` (le plus important)
+3. je vais les disposer dans `app.component.html` (le plus important)
 		tout se passe dans ce fichier 
 <pre>
 &lt;div class="container">
@@ -55,7 +55,7 @@ RouterModule.forRoot([
   &lt;/section>
 &lt;/div>
 </pre>
-4 je vais coder chaque module (html + bootstrap)
+4. je vais coder chaque module (html + bootstrap)
 
 barre de nav => 
 - https://www.w3schools.com/Bootstrap/bootstrap_navbar.asp
@@ -161,7 +161,9 @@ export class HomepageComponent implements OnInit {
 }
 </pre>
 
-5 je vais m'occuper du service 
+5. je vais m'occuper du service 
+
+- ng g s articles
 
 <pre>
 import { Injectable } from '@angular/core';
