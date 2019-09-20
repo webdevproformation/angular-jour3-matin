@@ -11,7 +11,6 @@ export class HomepageComponent implements OnInit {
   articles ;
 
   constructor( service : ArticlesService) {
-    console.log(service.getAll());
 
     this.articles = service.getAll();
    }

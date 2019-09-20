@@ -138,11 +138,55 @@ page d'accueil
 &lt;/div>
 </pre>
 
+<pre>
+import { Component, OnInit } from '@angular/core';
+import { ArticlesService } from "../articles.service"
 
+@Component({
+    selector: 'app-homepage',
+    templateUrl: './homepage.component.html',
+    styleUrls: ['./homepage.component.css']
+})
+export class HomepageComponent implements OnInit {
+
+    articles ;
+
+    constructor( service : ArticlesService) {
+
+    this.articles = service.getAll();
+    }
+
+    ngOnInit() {
+    }
+
+}
+</pre>
 
 5 je vais m'occuper du service 
 
+<pre>
+import { Injectable } from '@angular/core';
 
+@Injectable({
+    providedIn: 'root'
+})
+export class ArticlesService {
+
+    getAll() {
+    return [{id : 1 , urlImg : "https://via.placeholder.com/400x200" , titre : "article" , contenu : "lorem"},
+        {id : 2 , urlImg : "https://via.placeholder.com/400x200" , titre : "coucou !!" , contenu : "lorem"},
+        {id : 3 , urlImg : "https://via.placeholder.com/400x200" , titre : "article" , contenu : "lorem"},
+        {id : 4 , urlImg : "https://via.placeholder.com/400x200" , titre : "article" , contenu : "lorem"},
+        {id : 5 , urlImg : "https://via.placeholder.com/400x200" , titre : "article" , contenu : "lorem"},
+        {id : 6 , urlImg : "https://via.placeholder.com/400x200" , titre : "article" , contenu : "lorem"},
+        {id : 7 , urlImg : "https://via.placeholder.com/400x200" , titre : "article" , contenu : "lorem"},
+        {id : 8 , urlImg : "https://via.placeholder.com/400x200" , titre : "article" , contenu : "lorem"}
+    ];
+    }
+
+    constructor() { }
+}
+</pre>
 ---------------
 
 vue que je vais faire quasi tout faire à la ligne de commande le fichier

@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class ArticlesService {
 
-  Alldata() {
+  getAll() {
     return [{id : 1 , urlImg : "https://via.placeholder.com/400x200" , titre : "article" , contenu : "lorem"},
       {id : 2 , urlImg : "https://via.placeholder.com/400x200" , titre : "coucou !!" , contenu : "lorem"},
       {id : 3 , urlImg : "https://via.placeholder.com/400x200" , titre : "article" , contenu : "lorem"},
@@ -15,11 +15,6 @@ export class ArticlesService {
       {id : 7 , urlImg : "https://via.placeholder.com/400x200" , titre : "article" , contenu : "lorem"},
       {id : 8 , urlImg : "https://via.placeholder.com/400x200" , titre : "article" , contenu : "lorem"}
     ];
-  }
-
-  getAll()
-  {
-    return this.Alldata();
   }
 
   constructor() { }
