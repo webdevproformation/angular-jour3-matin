@@ -23,18 +23,18 @@ voir => http://formation.webdevpro.net/angular/02-data-event.html section 3
 - ng g c contactpage
 
 2 ajouter le RouterModule + définir les routes de mon application
-dans app.module.ts
+dans `app.module.ts`
 <pre>
-	import { RouterModule } from "@angular/router";
+import { RouterModule } from "@angular/router";
 </pre>
-	dans la section import de @NgModule
+dans la section import de @NgModule
 <pre>
-    RouterModule.forRoot([
-            {path: "", component : HomepageComponent},
-            {path: "contact", component : ContactpageComponent},
-    ])
+RouterModule.forRoot([
+        {path: "", component : HomepageComponent},
+        {path: "contact", component : ContactpageComponent},
+])
 </pre>
-3 je vais les disposer dans app.component.html (le plus important)
+3 je vais les disposer dans `app.component.html` (le plus important)
 		tout se passe dans ce fichier 
 <pre>
 &lt;div class="container">
@@ -158,7 +158,6 @@ export class HomepageComponent implements OnInit {
 
     ngOnInit() {
     }
-
 }
 </pre>
 
