@@ -1,14 +1,15 @@
 # Jour3
 
 créer le projet Angular jour3
-	ng new jour3
+- ng new jour3
 
 installer twitter bootstrap complet 
-	npm i bootstrap3
-	npm i jquery 
+- 	npm i bootstrap3
+- 	npm i jquery 
 
 modifier le fichier angular.json
 
+voir => http://formation.webdevpro.net/angular/02-data-event.html section 3
 
 ---------------------------
 
